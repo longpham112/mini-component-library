@@ -13,7 +13,7 @@ const ProgressBar = ({ value, size }) => {
       aria-valuemin="0"
       aria-valuenow={value}
     >
-      <Bar />
+      <Bar style={{ width: value + "%" }} />
     </Wrapper>
   );
 };
