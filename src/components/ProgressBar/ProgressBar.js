@@ -21,12 +21,18 @@ const ProgressBar = ({ value, size }) => {
 const Wrapper = styled.div`
   width: 370px;
   background-color: ${COLORS.transparentGray15};
+  border-radius: 4px;
+  box-shadow: inset 0 2px 4px ${COLORS.transparentGray35};
+
+  /* trim off the right side when progress bar full */
+  overflow: hidden;
 `;
 
 const Bar = styled.div`
   height: 8px;
   width: 100%;
   background-color: ${COLORS.primary};
+  border-radius: 4px 0 0 4px;
 `;
 
 export default ProgressBar;
