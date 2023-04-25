@@ -35,7 +35,9 @@ const ProgressBar = ({ value, size }) => {
       aria-valuenow={value}
       style={{ "--padding": Styles.padding + "px" }}
     >
-      <Bar style={{ width: value + "%", "--height": Styles.height + "px" }} />
+      <BarWrapper>
+        <Bar style={{ width: value + "%", "--height": Styles.height + "px" }} />
+      </BarWrapper>
     </Wrapper>
   );
 };
@@ -46,7 +48,10 @@ const Wrapper = styled.div`
   border-radius: 4px;
   box-shadow: inset 0 2px 4px ${COLORS.transparentGray35};
   padding: var(--padding);
+`;
 
+const BarWrapper = styled.div`
+  border-radius: 4px;
   /* trim off the right side when progress bar full */
   overflow: hidden;
 `;
