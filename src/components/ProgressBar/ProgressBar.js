@@ -38,6 +38,7 @@ const ProgressBar = ({ value, size }) => {
       <BarWrapper>
         <Bar style={{ width: value + "%", "--height": Styles.height + "px" }} />
       </BarWrapper>
+      <VisuallyHidden>{value}%</VisuallyHidden>
     </Wrapper>
   );
 };
