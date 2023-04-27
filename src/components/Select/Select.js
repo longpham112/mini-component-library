@@ -13,14 +13,32 @@ const Select = ({ label, value, onChange, children }) => {
       <NativeSelect value={value} onChange={onChange}>
         {children}
       </NativeSelect>
-      <DecorationBit>Content</DecorationBit>
+      <DecorationBit>{displayedValue}</DecorationBit>
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  position: relative;
+  width: max-content;
+`;
 
-const NativeSelect = styled.select``;
+const NativeSelect = styled.select`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 
-const DecorationBit = styled.div``;
+  /* hide this div behind DecorationBit */
+  opacity: 0;
+`;
+
+const DecorationBit = styled.div`
+  background-color: ${COLORS.transparentGray15};
+  color: ${COLORS.gray700};
+  padding: 12px 16px;
+  border-radius: 8px;
+`;
+
 export default Select;
