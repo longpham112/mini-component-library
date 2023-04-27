@@ -45,6 +45,15 @@ const DecorationBit = styled.div`
   padding: 12px 16px;
   border-radius: 8px;
   padding-right: 52px;
+
+  ${NativeSelect}:focus + & {
+    outline: 2px solid blue;
+    outline: 2px solid -webkit-focus-ring-color;
+  }
+
+  ${NativeSelect}:hover + & {
+    color: black;
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -55,6 +64,9 @@ const IconWrapper = styled.div`
   margin: auto;
   height: var(--size);
   width: var(--size);
+
+  /* make it so we can click through the chevron */
+  pointer-events: none;
 `;
 
 export default Select;
